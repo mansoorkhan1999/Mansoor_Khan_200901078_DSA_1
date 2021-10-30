@@ -1,0 +1,15 @@
+# Mansoor Khan_200901078
+Question_2
+
+R-6.2 Suppose an initially empty stack S has executed a total of 25 push operations, 
+12 top operations, and 10 pop operations, 3 of which raised Empty errors that were caught and ignored. What is the current size of S?
+
+==================================ANSWER=========================================
+
+25 pushes = 25 index
+
+10 pops = 25 - 10 = 15
+
+3 pops rise empty errors and didn't change size of stack means only 7 pops occur changes = 25-7  = 18
+
+tops does not matter, so it should be 18
