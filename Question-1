@@ -1,0 +1,66 @@
+# Mansoor_Khan_200901078_DSA_1
+"R-6.1 
+What values are returned during the following series of stack operations, if
+executed upon an initially empty stack? push(5), push(3), pop(), push(2),
+push(8), pop(), pop(), push(9), push(1), pop(), push(7), push(6), pop(),
+pop(), push(4), pop(), pop()."
+
+                                              ****************ANSWER******************
+
+Operations performed according to the quetion are given below:
+
+1) Push(5):
+        When stack is empty and we execute function **Push(5)** then it push 5 into the empty stack and now the top is 5.
+
+2) Push(3):
+       After Push(5) operation when we execute **Push(3) **operation then it push 3 into the stack and now the top is 3. 
+
+3) POP():
+       When **pop()** function executed then it first retrieve/fetch top value after that  delete that top value means it delete last value that push into stack means it delete 3 and now the top is 5.After pop it returns 3.
+
+4) Push(2):
+       After pop when we Push(2) then it push 2 into the stack and now the top is 2.
+
+5) Push(8):
+       After Push(2) function when we Push (8) then it append 8 into the stack and now the top is 8. Now in stack there are three values 5,2,8.
+
+6) POP():
+       When call function pop() then it fetch the top value 8 and delete the value 8. And now there are 5 and 2 are left in stack where 2 is Top.After pop() it returns 8.
+
+7) POP():
+      After Pop() again it returns 2 and now the top is 5.
+
+8) Push(9):
+      After Push(9) then it append 9 into the stack and now the top is 9. And now there is 5 and 9 in the stack.
+
+9) Push(1):
+      After Push(1) then it append 1 into the stack and now the top is 1. And now there is 5,9 and 1 values in the stack.
+
+10) Pop():
+      After pop() it delete top value 1 from stack and now there are 5 and 9 two values left in stack and 9 is top now.
+
+11) Push(7):
+      After push(7) it append 7 into the stack and now there is three values in the stack 5,9,7 and 7 is top now.
+
+12) Push(6):
+       After push(6) it append 6 into the stack and now there is four values in the stack 5,9,7,6 and 6 is top now.
+
+13) Pop():
+       When we pop from current stack which is 5,9,7,6 than it delete the top value 6 from stack.
+
+14) Pop():
+       After pop() again it delete top value 7 .
+
+15) Push(4):
+       After push(4) it append 4 in stack and now top is 4 and there are three values in stack 5,9,4.
+
+16) Pop():
+       Calling pop function it returns 4 and delete 4 from stack.
+
+17) Pop():
+      Calling pop function it returns 9 and delete 9 from stack because it is top. 
+
+
+                              ======================================================
+
+After perform all operations now there is one value left in stack which is 5 and it is top now.
