@@ -1,0 +1,34 @@
+R-6.4 
+Give a recursive method for removing all the elements from a stack.
+
+===========================CODE===================================
+
+class Stack: #class stck to implement stack
+ def __init__(self): #method to define elements of stack
+  self.items = []
+ def isEmpty(self): #to check weather stack is emoty or not
+  return self.items == [0]
+ def append(self, item): #to add element
+  self.items.insert(0,item)
+ def pop(self): #to remove elements
+  return self.items.pop(0)
+ def peek(self): # return top element
+  return self.items[0]
+ def size(self): #return size
+  return len(self.items)
+ def elements(self):#return elements in stack  
+  return (self.items)
+ def recursive(self,stack): #recursive method to remove all elements
+  if(stack==[]):
+   print("Stack is empty now . Exit!!!")
+  else:
+   print("Element removed is ",s.pop())
+   s.recursive(stack)
+
+s = Stack()
+s.append("Mansoor")
+s.append(200901078)
+s.append('Section-A')
+s.recursive(s.items)
+
+
