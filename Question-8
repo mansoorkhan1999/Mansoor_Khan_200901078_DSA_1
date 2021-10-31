@@ -1,0 +1,21 @@
+#          Mansoor Khan____200901078
+Q-8:
+Suppose an initially empty queue Q has executed a total of 32 enqueue
+operations, 10 first operations, and 15 dequeue operations, 5 of which
+raised Empty errors that were caught and ignored. What is the current
+size of Q?
+
+==================================ANSWER===========================================
+void Enqueue(Item) = insert Item to the end of the queue.
+
+Item Dequeue = remove and return the Item at the front of the queue. 
+Throw an Empty Error if the queue is empty when the operation is invoked.
+
+Item First = return the Item at the front of the queue, do not remove it.
+
+Like before, a dequeue operation that fails doesn't remove anything from the queue, so there are essentially 10 dequeues
+
+First operations don't change the queue at all
+
+Therefore we have 32-10 = 22 
+(the size of the queue is 22 at that point)
