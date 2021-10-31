@@ -1,0 +1,35 @@
+=============================CODE==========================================
+
+
+import collections
+S = Stack()
+D = collections.deque()
+
+for i in range(1,9,1):
+    D.append(i)
+    
+
+    
+def arrange_using_stack(D, S):
+    for _ in range(4):
+        S.push(D.popleft())    # [5,6,7,8], [1,2,3,4]
+        
+    D.append(S.pop())          # [5,6,7,8,4], [1,2,3]
+    
+    S.push(D.popleft())        # [6,7,8,4], [1,2,3,5]
+    
+    S.push(D.pop())            # [6,7,8], [1,2,3,5,4]
+    
+    for _ in range(5):
+        D.appendleft(S.pop())  #[1,2,3,5,4,6,7,8], []
+
+arrange_using_stack(D, S) 
+    
+    
+print('Values of S')
+while not S.is_empty():
+    print(S.pop())
+    
+print('Values of D:')
+while len(D) != 0:
+    print(D.popleft())
