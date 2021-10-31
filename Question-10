@@ -1,0 +1,28 @@
+R-6.10 
+Consider what happens if the loop in the ArrayQueue. resize method at
+lines 53–55 of Code Fragment 6.7 had been implemented as:
+      for k in range(self. size):
+        self. data[k] = old[k] # rather than old[walk]
+Give a clear explanation of what could go wrong
+
+===========================ANSWER=============================================
+
+This method will copy the data in exactly, but now there will be a huge gap between the middle of the data
+filled with None and the next value (which is situated at ._data[0])
+
+example. a queue with 1,2,3,4,5,6,7 with front = 3:
+      
+5,6,7,1,2,3,4
+
+would become:
+      
+5,6,7,1,2,3,4,N,N,N,N,N,N,N
+
+the next insertion would be at front + self._size, which would be:
+      
+5,6,7,1,2,3,4,N,N,N,8,N,N,N and so on, which results in the fragmentation of the data.  Successive dequeues would 
+result in 1,2,3,4,N,N,N,....., N,N instead of the desired 1,2,3,4,5,6,7, is_empty==True
+
+In contract, the walk assures that the data will stay both in order and in direct sequence, producing:
+
+1,2,3,4,5,6,7,N,N,N,N,N,N,N
