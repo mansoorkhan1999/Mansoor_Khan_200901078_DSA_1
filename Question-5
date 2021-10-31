@@ -1,0 +1,21 @@
+#Mansoor Khan_200901078
+R-6.5 
+Implement a function that reverses a list of elements by pushing them onto
+a stack in one order, and writing them back to the list in reversed order.
+
+=================================CODE========================================
+
+from collections import deque
+S=deque()
+Stack=deque()
+def reverse(S):
+    for e in S:
+        Stack.append(e)
+    for i in range(len(Stack)):
+        S[i]=(Stack.pop())
+lists = [[1,2,3,4,5,],
+        [8,2,5,7,8,9,5]]
+for l in lists:
+    print ('Before Reversing : \n', l)
+    reverse(l)
+    print('After Reversing :  \n', l)
