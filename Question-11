@@ -1,0 +1,37 @@
+R-6.11
+Give a simple adapter that implements our queue ADT while using a
+collections.deque instance for storage
+
+==================================CODE==========================================
+
+import collections
+class Queue():
+    def __init__(self):
+        self.data = collections.deque()
+        self.size = 0 
+    def __len__(self):
+        return self.size
+    
+    def first(self):
+        return self.data[0]
+        
+    def enqueue(self, value):
+        self.size += 1
+        self.data.append(value)  
+        
+    def is_empty(self):
+        return self.size == 0
+    
+    def dequeue(self):
+            l = self.data.popleft()
+            self.size -= 1
+            return l
+        
+d = Queue()
+num=int(input("Enetr first element  "))
+f=int(input("Enter last element "))
+for i in range(num,f+1):
+    d.enqueue(i)
+print('First', d.first(), '\nUpto Length', len(d))
+while not d.is_empty():
+    print( d.dequeue(),  end = ', ')
