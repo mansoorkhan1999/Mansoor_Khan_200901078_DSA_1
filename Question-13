@@ -6,3 +6,35 @@ results in D storing the elements in the order (1,2,3,5,4,6,7,8)
 
 =============================CODE=========================================
 
+import collections
+
+D = collections.deque()
+Q = Queue()
+for i in range(1, 9, 1):
+    D.append(i)
+    
+def arrange_using_queue(D, Q):    
+    for i in range(5):               
+        Q.enqueue(D.popleft())     #[6,7,8], [1,2,3,4,5]
+        
+    for i in range(3):
+        D.append(Q.dequeue())      #[6,7,8,1,2,3], [4,5]
+        
+    
+    for i in range(2):
+        D.appendleft(Q.dequeue())  #[5,4,6,7,8,1,2,3], []
+        
+    for i in range(3):
+        Q.enqueue(D.pop())         #[5,4,6,7,8], [3,2,1]
+    
+    for i in range(3):
+        D.appendleft(Q.dequeue())  #[1,2,3,5,4,6,7,8]
+    
+arrange_using_queue(D, Q)
+
+while not Q.is_empty():
+    print(Q.dequeue())
+    
+print('Values of D')
+while len(D) != 0:
+    print(D.popleft())
