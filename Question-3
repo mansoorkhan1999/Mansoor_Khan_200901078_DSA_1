@@ -1,0 +1,23 @@
+R-6.3
+" Implement a function with signature transfer(S, T) that transfers all elements from stack S onto stack T, so that the element that starts at the top
+of S is the first to be inserted onto T, and the element at the bottom of S
+ends up at the top of T."
+
+===================================CODE=======================================================================================
+
+from collections import deque
+def transfer(T,S):
+ num=int(input('Enter the TOP of Stack T  \n'))
+ print("======================================")
+ no=int(input('Enetr BOTTOM of Stack T \n'))
+ for i in range(no,num+1):
+  T.append(i)
+ while (len(T)!=0):
+  S.append(T.pop())
+T=deque()
+S = deque()
+transfer(T,S)
+print("====================================================================================================")
+print("The TOP that you enter in T is transfer at the bottom of stack S and Bottom of T is tranfer at TOP of S ")
+print("=======================================")
+print(S)
