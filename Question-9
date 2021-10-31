@@ -1,0 +1,17 @@
+R-6.9
+Had the queue of the previous problem been an instance of ArrayQueue
+that used an initial array of capacity 30, and had its size never been greater
+than 30, what would be the final value of the front instance variable?
+
+================================ANSWER=================================
+
+void Enqueue(Item) - insert Item to the end of the queue.
+Item Dequeue - remove and return the Item at the front of the queue. Throw an Empty Error if the queue is empty when the operation is invoked.
+Item First - return the Item at the front of the queue, do not remove it.
+
+This means that Enqueues add one to the queue's size, Dequeues remove one from the queue's size, if the size is greater than 0, and Firsts don't impact the queue's size.
+
+So we have 32 increments, 10 no-ops and 15 potential decrements. Five of those potential decrements did not impact the queue size, so only ten remain.
+
+32 * 1 + 10 * 0 + 5 * 0 + 10 * -1 = 22
+
