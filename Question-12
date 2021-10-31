@@ -1,0 +1,24 @@
+R-6.12 
+What values are returned during the following sequence of deque ADT operations, on initially empty deque? add first(4), add last(8), add last(9),
+add first(5), back( ), delete first( ), delete last( ), add last(7), first( ),
+last( ), add last(6), delete first( ), delete first( )
+
+======================================ANSWER==========================================================
+
+Return   Values in the Stack
+
+-        [4]
+-        [4, 8]
+-        [4, 8, 9]
+-        [5, 4, 8, 9]
+9        [5, 4, 8, 9] -The back operation means last()
+5        [4, 8, 9]
+9        [4,8]
+-        [4,8,7]
+4        [4,8,7]
+7        [4,8,7]
+-        [4,8,7,6]
+4        [8,7,6]
+8        [7,6]
+
+At the end we left with 2 values 7 and 6.
